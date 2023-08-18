@@ -1,0 +1,12 @@
+scalar Timestamp
+
+type Bread {
+  id: ID!
+  name: String!
+  createdAt: Timestamp!
+}
+
+type Query {
+  breads: [Bread!]!
+  bread(id: ID!): Bread
+}
