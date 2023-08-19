@@ -7,6 +7,7 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/k2hmr/panforyou-test-2/graph/api"
 	"github.com/k2hmr/panforyou-test-2/graph/generated"
 	"github.com/k2hmr/panforyou-test-2/graph/model"
 )
@@ -14,11 +15,19 @@ import (
 func (r *Resolver) Query() generated.QueryResolver { return &queryResolver{r} }
 
 func (r *Resolver) Breads(ctx context.Context) ([]*model.Bread, error) {
-	return r.breads, nil
+	breads, err := api.FetchBreads(r.firestoreClient,ctx)
+	if err != nil {
+		return nil, err
+	}
+	return breads, nil
 }
 
 func (r *Resolver) Bread(ctx context.Context, id string) (*model.Bread, error) {
-	for _, bread := range r.breads {
+	breads, err := api.FetchBreads(r.firestoreClient,ctx)
+	if err != nil {
+		return nil, err
+	}
+	for _, bread := range breads {
 		if bread.ID == id {
 			return bread, nil
 		}
