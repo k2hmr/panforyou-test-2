@@ -16,7 +16,6 @@ const port = "8080"
 
 func main() {
 	ctx := context.Background()
-
 	rsv, err := graph.NewResolver(ctx)
 	if err != nil {
 		log.Fatal(err)
