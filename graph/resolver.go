@@ -22,6 +22,7 @@ func NewResolver(ctx context.Context) (*Resolver, error) {
 	if err != nil {
 		return nil, err
 	}
+	// TODO: clientをどのタイミングでCloseするか考える。そもそも使い回す形になっているのが良くないかも…。
 	client, err := app.Firestore(ctx)
 	if err != nil {
 		return nil, err
