@@ -2,6 +2,7 @@ package api
 
 import (
 	"context"
+	"time"
 
 	"cloud.google.com/go/firestore"
 	"github.com/k2hmr/panforyou-test-2/graph/model"
@@ -15,13 +16,13 @@ func FetchBreads(client *firestore.Client, ctx context.Context) (breads []*model
 			break
 		}
 		bread := &model.Bread{
-			ID: doc.Data()["id"].(string),
-			Name: doc.Data()["name"].(string),
-			CreatedAt: doc.Data()["createdAt"].(string),
+			ID:        doc.Data()["Id"].(string),
+			Name:      doc.Data()["Name"].(string),
+			CreatedAt: doc.Data()["CreatedAt"].(time.Time),
 		}
 		breads = append(breads, bread)
 	}
 
-  defer client.Close()
+	defer client.Close()
 	return breads, nil
 }

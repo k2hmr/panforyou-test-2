@@ -1,9 +1,9 @@
-scalar Timestamp
+scalar Time
 
 type Bread {
   id: ID!
   name: String!
-  createdAt: Timestamp!
+  createdAt: Time!
 }
 
 type Query {

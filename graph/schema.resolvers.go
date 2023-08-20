@@ -15,7 +15,7 @@ import (
 func (r *Resolver) Query() generated.QueryResolver { return &queryResolver{r} }
 
 func (r *Resolver) Breads(ctx context.Context) ([]*model.Bread, error) {
-	breads, err := api.FetchBreads(r.firestoreClient,ctx)
+	breads, err := api.FetchBreads(r.firestoreClient, ctx)
 	if err != nil {
 		return nil, err
 	}
@@ -23,7 +23,7 @@ func (r *Resolver) Breads(ctx context.Context) ([]*model.Bread, error) {
 }
 
 func (r *Resolver) Bread(ctx context.Context, id string) (*model.Bread, error) {
-	breads, err := api.FetchBreads(r.firestoreClient,ctx)
+	breads, err := api.FetchBreads(r.firestoreClient, ctx)
 	if err != nil {
 		return nil, err
 	}
