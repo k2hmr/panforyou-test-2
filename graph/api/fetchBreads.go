@@ -23,6 +23,5 @@ func FetchBreads(client *firestore.Client, ctx context.Context) (breads []*model
 		breads = append(breads, bread)
 	}
 
-	defer client.Close()
 	return breads, nil
 }
