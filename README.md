@@ -10,23 +10,31 @@ b. id を指定して、panforyou-test-1 で Cloud Firestore に保存したデ�
 
 ### モジュールのインストール
 
-`go mod download`
+```
+  go mod download
+```
 
 ### Firebase でサービスアカウントの秘密鍵の作成
 
-以下の流れで秘密鍵(JSON ファイル)を作成し、ルートディレクトリに `path/to/serviceAccount.json` として保存してください。  
-↓Firebase コンソール  
-↓ プロジェクトの設定  
-↓ サービスアカウント  
-↓ 新しい秘密鍵を生成ボタン押下  
-→JSON ファイルのダウンロード
+以下の流れで秘密鍵(JSON ファイル)を作成し、ルートディレクトリに `path/to/serviceAccount.json` として保存してください。
+
+```
+  ↓Firebase コンソール
+  ↓ プロジェクトの設定
+  ↓ サービスアカウント
+  ↓ 新しい秘密鍵を生成ボタン押下
+  →JSON ファイルのダウンロード
+```
 
 ## アプリの使い方
 
 ### graphQL サーバの起動
 
-以下のコマンドで graphQL サーバを起動します。  
-`go run ./server.go`
+以下のコマンドで graphQL サーバを起動します。
+
+```
+  go run ./server.go
+```
 
 ### クエリの実行
 
