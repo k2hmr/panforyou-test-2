@@ -8,6 +8,10 @@ b. id を指定して、panforyou-test-1 で Cloud Firestore に保存したデ�
 
 ## 環境構築
 
+### モジュールのインストール
+
+`go mod download`
+
 ### Firebase でサービスアカウントの秘密鍵の作成
 
 以下の流れで秘密鍵(JSON ファイル)を作成し、ルートディレクトリに `path/to/serviceAccount.json` として保存してください。  
